@@ -1,0 +1,2 @@
+This is some sample data to be written to the file.
+Appending this line to the file.
