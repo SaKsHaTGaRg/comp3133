@@ -1,1 +1,30 @@
 <h1>{{ title }}</h1>
+
+<h2>My Heroes</h2>
+
+<ul>
+  @for (hero of heroes; track hero.id) {
+    <li (click)="selectHero(hero)" style="cursor: pointer; margin-bottom: 8px;">
+      {{ hero.id }} - {{ hero.name | removeSpaces }}
+    </li>
+  }
+</ul>
+
+@if (selectedHero) {
+  <h3>Selected Hero Details</h3>
+  <p><strong>Id:</strong> {{ selectedHero.id }}</p>
+  <p><strong>Name:</strong> {{ selectedHero.name | removeSpaces }}</p>
+}
+
+<hr>
+
+<h2>Input Format Directive</h2>
+
+<input
+  type="text"
+  inputFormat
+  [(ngModel)]="userInput"
+  placeholder="Type text and click away"
+/>
+
+<p>Text model: {{ userInput }}</p>
